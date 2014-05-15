@@ -6,14 +6,14 @@ require(['modernizr'], function() {
 				pubid: '', // Place your AddThis pubid between the quotes or leave empty to disable AddThis sharing
 			},
 			comments: {
-				type: '', // Set to either "Google+", "Disqus" or "Livefyre" to enable commenting
+				type: 'Google+', // Set to either "Google+", "Disqus" or "Livefyre" to enable commenting
 				token: '', // The shortname for Disqus or the site ID for Livefyre. Google+ is very smart and doesn't need anything
 			},
 			embedly: {
-				key: '', // Place your Embedly API key between the quotes or leave empty to disable Embedly embeds
+				key: '5f652fe609b04739988a151c20f10d8f', // Place your Embedly API key between the quotes or leave empty to disable Embedly embeds
 			},
 			ga: {
-				id: '', // Place your Google Analytics ID between the quotes or leave empty to disable Google Analytics tracking
+				id: 'UA-8083052-1', // Place your Google Analytics ID between the quotes or leave empty to disable Google Analytics tracking
 			},
 			tapir: {
 				token: '', // Place your Tapir token between the quotes or leave empty to disable search
