@@ -1,0 +1,15 @@
+{{!< default}}
+
+{{> header}}
+
+<main class="site-main" role="main">
+    {{#post}}
+    <article class="{{post_class}}" id="post-{{id}}">
+        <div class="wrapper">
+            <h1 class="post-title">{{{title}}}</h1>
+
+            {{content}}
+        </div>
+    </article>
+    {{/post}}
+</main>

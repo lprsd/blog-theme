@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta content="{{meta_description}}" name="description">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        {{#post}}
+        <meta content="summary" name="twitter:card">
+        <meta content="@" name="twitter:site">
+        <meta content="@" name="twitter:creator">
+
+        <meta content="article" property="og:type">
+        {{#if tags}}<meta content="{{tags}}" property="og:article:tag">{{/if}}
+        {{#if author.name}}<meta content="{{author.name}}" property="og:article:author">{{/if}}
+        {{#if date}}<meta content="{{date format='YYYY-MM-DD'}}" property="article:published_time">{{/if}}
+        <meta content="{{@blog.title}}" property="og:site_name">
+        <meta content="{{title}}" property="og:title">
+        <meta content="{{url absolute='true'}}" property="og:url">
+        <meta content="{{@blog.url}}{{#if author.image}}{{author.image}}{{else}}{{@blog.logo}}{{/if}}" property="og:image">
+        {{/post}}
+
+        <title>{{meta_title}}</title>
+
+        <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Open+Sans:400,600,700,800&amp;subset=latin,cyrillic" rel="stylesheet">
+        <link href="/assets/css/fonts.css" rel="stylesheet">
+        <link href="/assets/css/normalize.css" rel="stylesheet">
+        <link href="/assets/css/style.css" rel="stylesheet">
+        <link href="/assets/images/favicon.ico" rel="icon">
+        {{#if @blog.cover}}<link href="{{@blog.cover}}" rel="prefetch">{{/if}}
+        {{#if pagination.next}}<link href="{{pageUrl pagination.next}}" rel="prefetch">{{/if}}
+
+        {{ghost_head}}
+    </head>
+
+    <body class="{{body_class}}">
+        <header aria-hidden="true" class="site-sidebar hidden" role="banner">
+            <nav class="site-nav">
+                <a href="/">Home</a>
+                <a href="/changelog">Changelog</a>
+                <a href="https://creativemarket.com/temacotta/16399-Lector?u=temacotta">Buy Lector</a>
+            </nav>
+
+            <ul class="social">
+                <li><a class="fa ss-icon" href="{{@blog.url}}/rss">RSS</a></li>
+                <li><a class="fa ss-icon" href="https://twitter.com/temacotta">Twitter</a></li>
+            </ul>
+
+            <p class="copyright">&copy; Copyright <a href="/">{{@blog.title}}</a> {{date format='YYYY'}}. Geared by <a href="http://ghost.org">Ghost</a></p>
+        </header>
+
+        <a class="site-sidebar-toggle icon-nav" href="/"><span class="alt">Menu</span></a>
+
+        <div class="site-container" id="skrollr-body">
+            {{{body}}}
+        </div>
+
+        {{ghost_foot}}
+
+        <script data-main="/assets/js/main.js" src="/assets/js/require.js"></script>
+    </body>
+</html>

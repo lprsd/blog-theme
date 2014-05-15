@@ -1,0 +1,33 @@
+{{!< default}}
+
+{{#unless pagination.prev}}
+{{> header}}
+{{/unless}}
+
+<main class="site-main" role="main">
+    {{#if pagination.prev}}
+    <nav class="pagination newer">
+        <a class="icon-up" href="{{pageUrl pagination.prev}}"><span class="alt">Newer posts</span></a>
+    </nav>
+    {{/if}}
+
+    {{#foreach posts}}
+    <article class="{{post_class}} {{#if @first}}first{{/if}} {{#if @last}}last{{/if}} post-excerpt" id="post-{{id}}" {{#unless @first}}data-bottom-top="transform: translateY(200px)" data-200-top="transform: translateY(0)"{{/unless}}>
+        <div class="wrapper">
+            <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
+
+            <div class="post-content">
+            {{content words="200"}}
+            </div>
+
+            <div class="overlay" data-200-bottom="transform: translateY(150px)" data-top="transform: translateY(0)"></div>
+        </div>
+    </article>
+    {{/foreach}}
+
+    {{#if pagination.next}}
+    <nav class="pagination older">
+        <a class="icon-down" href="{{pageUrl pagination.next}}"><span class="alt">Older posts</span></a>
+    </nav>
+    {{/if}}
+</main>

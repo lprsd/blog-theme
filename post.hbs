@@ -1,0 +1,33 @@
+{{!< default}}
+
+{{pagination.pages}}
+
+<main class="site-main" role="main">
+    {{#post}}
+    <article class="{{post_class}} post-full" id="post-{{id}}" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="wrapper">
+            <h1 class="post-title">{{{title}}}</h1>
+
+            <div class="post-content" itemprop="articleBody">
+            {{content}}
+            </div>
+
+            <footer class="post-footer">
+                <p class="published">Published by {{#if author.website}}<a class="author-website" href="{{author.website}}" itemprop="url">{{/if}}{{author.name}}{{#if author.website}}</a>{{/if}} on <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}" itemprop="datePublished">{{date format='MMMM D, YYYY'}}</time></p>
+
+                {{#if author}}
+                {{#if author.bio}}
+                <aside class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    {{#if author.image}}<img alt="" class="author-image" itemprop="image" src="{{author.image}}">{{/if}}
+
+                    <h2 class="author-name" itemprop="name">{{#if author.website}}<a class="author-website" href="{{author.website}}" itemprop="url">{{/if}}{{author.name}}{{#if author.website}}</a>{{/if}}</h2>
+
+                    <p class="author-bio" itemprop="description">{{author.bio}}</p>
+                </aside>
+                {{/if}}
+                {{/if}}
+            </footer>
+        </div>
+    </article>
+    {{/post}}
+</main>

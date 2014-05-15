@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta content="" name="description">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <title>Not found – 404</title>
+
+        <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Open+Sans:400,600,700,800&amp;subset=latin,cyrillic" rel="stylesheet">
+        <link href="/assets/css/ss-social-regular.css" rel="stylesheet">
+        <link href="/assets/css/normalize.css" rel="stylesheet">
+        <link href="/assets/css/style.css" rel="stylesheet">
+        <link href="/assets/images/favicon.ico" rel="icon">
+    </head>
+
+	<body class="http-404" {{#if @blog.cover}}style="background-image: url('{{@blog.cover}}')"{{/if}}>
+		<main class="site-main" role="main">
+			<div class="center-y">
+				<div class="center-y-wrapper">
+					<h1>Not found</h1>
+
+					<p>Sorry, the page you were looking for doesn’t exist.<br><a href="/">Return home</a></p>
+				</div>
+			</div>
+		</main>
+
+        {{ghost_foot}}
+
+        <script data-main="/assets/js/main.js" src="/assets/js/require.js"></script>
+	</body>
+</html>

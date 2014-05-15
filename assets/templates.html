@@ -1,0 +1,50 @@
+<template id="comments">
+    <section class="comments">
+        <form class="comments-toggle">
+            <input type="submit" value="Comments">
+        </form>
+    </section>
+</template>
+
+<template id="post-next">
+    <article class="post post-excerpt post-next" id="post-{{id}}">
+        <div class="wrapper">
+            <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
+
+            <div class="post-content">
+            {{{content}}}
+            </div>
+
+            <div class="overlay"></div>
+        </div>
+    </article>
+</template>
+
+<template id="search">
+    <div class="site-search">
+        <form>
+            <input placeholder="Search" type="search">
+
+            <input type="submit">
+
+            <span class="search-icon icon-search"></span>
+        </form>
+
+        <div class="site-search-results"></div>
+    </div>
+</template>
+
+<template id="search-result">
+	<a class="search-result" href="{{link}}">
+		<h2 class="search-result-title">{{{title}}}</h2>
+
+		<time class="search-result-date">{{date}}</time>
+	</a>
+</template>
+
+<template id="share">
+    <div class="share addthis_toolbox">
+        <a class="addthis_button_twitter ss-icon"><span>Twitter</span></a>
+        <a class="addthis_button_facebook ss-icon"><span>Facebook</span></a>
+    </div>
+</template>
